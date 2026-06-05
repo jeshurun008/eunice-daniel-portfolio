@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import portraitAsset from "@/assets/portrait.jpeg.asset.json";
+import intertwineAsset from "@/assets/intertwine.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,12 +16,44 @@ export const Route = createFileRoute("/")({
 });
 
 const projects = [
-  { title: "Product 1", category: "Category 1", year: "Year 1", span: "md:col-span-7", aspect: "aspect-[4/3]" },
-  { title: "Product 2", category: "Category 2", year: "Year 2", span: "md:col-span-5 md:mt-32", aspect: "aspect-[4/3]" },
-  { title: "Product 3", category: "Category 3", year: "Year 3", span: "md:col-span-5", aspect: "aspect-[3/4]" },
-  { title: "Product 4", category: "Category 4", year: "Year 4", span: "md:col-span-7 md:mt-24", aspect: "aspect-[4/3]" },
-  { title: "Product 5", category: "Category 5", year: "Year 5", span: "md:col-span-6", aspect: "aspect-[3/4]" },
-  { title: "Product 6", category: "Category 6", year: "Year 6", span: "md:col-span-6 md:mt-40", aspect: "aspect-[4/3]" },
+const projects = [
+  {
+    title: "Intertwஐne",
+    category: "Contemporary Jewellery",
+    year: "Collection 01",
+    image: intertwineAsset.url,
+    description:
+      "Intertwஐne explores the intertwining of cultural practices through the lens of contemporary jewellery design. Inspired by \u201CPoo Korthal\u201D (traditional flower stringing), a practice deeply rooted in Tamil culture, often used for adornment, the collection draws on the simplicity and versatility of this floral tradition, bringing durability to the narratives of this elegant, temporary form of adornment. The pieces reinterpret the forms and structures of flower garlands through enlarged and exaggerated elements inspired by petals and stems. Amplifying delicate and tiny forms explores the possibilities beyond the limitations of real flowers. Each petal is individually moulded and dyed using traditional leather techniques. Celebrating a sustainable use of resources and crafted from post-consumer leather remnants, the jewellery invites audiences to reconsider the value of pre-consumer material surplus and the inherent possibilities. Designed for the Indian diaspora, the collection reflects the experience of carrying fragments of culture across borders, embodying identity, memory and connection.",
+    details: [
+      ["Medium", "Post-consumer leather"],
+      ["Technique", "Moulded · Hand-dyed"],
+      ["Origin", "Tamil tradition"],
+    ],
+  },
+  {
+    title: "Product 2",
+    category: "Category 2",
+    year: "Year 2",
+    image: null,
+    description: "Description 2. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    details: [
+      ["Label 1", "Value 1"],
+      ["Label 2", "Value 2"],
+      ["Label 3", "Value 3"],
+    ],
+  },
+  {
+    title: "Product 3",
+    category: "Category 3",
+    year: "Year 3",
+    image: null,
+    description: "Description 3. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    details: [
+      ["Label 1", "Value 1"],
+      ["Label 2", "Value 2"],
+      ["Label 3", "Value 3"],
+    ],
+  },
 ];
 
 const navItems = ["Nav 1", "Nav 2", "Nav 3", "Nav 4", "Nav 5"];
@@ -32,7 +66,6 @@ function Index() {
       <Marquee />
       <Work />
       <About />
-      <Services />
       <Contact />
       <Footer />
     </div>
@@ -86,7 +119,7 @@ function Hero() {
         </h1>
 
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42vw] max-w-[440px] aspect-[3/4] bg-muted flex items-center justify-center">
-          <span className="eyebrow text-muted-foreground">Image 1</span>
+          <img src={portraitAsset.url} alt="Portrait" className="w-full h-full object-cover" />
         </div>
       </div>
 
@@ -127,34 +160,47 @@ function Work() {
         <div className="col-span-12 md:col-span-3 eyebrow text-muted-foreground">
           Section 2
         </div>
-        <h2
-          className="col-span-12 md:col-span-9 font-display text-foreground"
-          style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
-        >
-          Headline 1
-        </h2>
+        <p className="col-span-12 md:col-span-6 eyebrow text-muted-foreground text-right md:col-start-10">
+          Selected Works
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-24 md:gap-y-40">
+      <div className="space-y-32 md:space-y-56">
         {projects.map((p, idx) => (
-          <article key={p.title} className={`col-span-1 ${p.span} group`}>
-            <div className={`relative overflow-hidden ${p.aspect} bg-muted flex items-center justify-center`}>
-              <span className="eyebrow text-muted-foreground">Image {idx + 1}</span>
-              <span className="absolute top-4 left-4 eyebrow text-foreground">
+          <article key={p.title} className="grid grid-cols-12 gap-6 md:gap-10 items-start">
+            <div className="col-span-12 md:col-span-7 relative overflow-hidden aspect-[3/4] bg-muted flex items-center justify-center">
+              {p.image ? (
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+              ) : (
+                <span className="eyebrow text-muted-foreground">Image {idx + 1}</span>
+              )}
+              <span className="absolute top-4 left-4 eyebrow text-background mix-blend-difference">
                 № {String(idx + 1).padStart(2, "0")}
               </span>
             </div>
-            <div className="mt-6 flex items-end justify-between">
-              <div>
-                <h3
-                  className="font-display text-foreground"
-                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-                >
-                  {p.title}
-                </h3>
-                <p className="eyebrow text-muted-foreground mt-3">{p.category}</p>
-              </div>
-              <span className="eyebrow text-muted-foreground">{p.year}</span>
+
+            <div className="col-span-12 md:col-span-5 md:pl-4 md:pt-8">
+              <p className="eyebrow text-accent">{p.category}</p>
+              <h3
+                className="font-display text-foreground mt-4"
+                style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+              >
+                {p.title}
+              </h3>
+              <p className="eyebrow text-muted-foreground mt-3">{p.year}</p>
+
+              <p className="mt-8 font-sans-tight font-light text-base md:text-lg leading-relaxed text-foreground/80 max-w-md">
+                {p.description}
+              </p>
+
+              <dl className="mt-10 border-t border-border divide-y divide-border max-w-md">
+                {p.details.map(([k, v]) => (
+                  <div key={k} className="flex items-baseline justify-between py-4">
+                    <dt className="eyebrow text-muted-foreground">{k}</dt>
+                    <dd className="font-sans-tight text-foreground">{v}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </article>
         ))}
