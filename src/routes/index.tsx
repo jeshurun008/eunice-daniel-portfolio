@@ -16,7 +16,6 @@ export const Route = createFileRoute("/")({
 });
 
 const projects = [
-const projects = [
   {
     title: "Intertwஐne",
     category: "Contemporary Jewellery",
