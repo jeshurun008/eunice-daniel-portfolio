@@ -178,7 +178,7 @@ function Work() {
           <article key={p.title} className="grid grid-cols-12 gap-6 md:gap-10 items-start">
             <div className="col-span-12 md:col-span-7 relative overflow-hidden aspect-[3/4] bg-muted flex items-center justify-center">
               {p.image ? (
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover grayscale" />
               ) : (
                 <span className="eyebrow text-muted-foreground">Image {idx + 1}</span>
               )}
