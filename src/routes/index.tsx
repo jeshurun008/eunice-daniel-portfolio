@@ -5,10 +5,10 @@ import intertwineAsset from "@/assets/intertwine.jpeg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Name 1 — Title 1" },
-      { name: "description", content: "Description 1" },
-      { property: "og:title", content: "Name 1 — Title 1" },
-      { property: "og:description", content: "Description 1" },
+      { title: "Eunice Daniel — Designer" },
+      { name: "description", content: "Portfolio of Eunice Daniel, contemporary jewellery and object designer." },
+      { property: "og:title", content: "Eunice Daniel — Designer" },
+      { property: "og:description", content: "Portfolio of Eunice Daniel, contemporary jewellery and object designer." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -75,7 +75,7 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
       <div className="flex items-center justify-between px-6 md:px-10 py-6">
-        <a href="#top" className="eyebrow text-white">Name 1</a>
+        <a href="#top" className="eyebrow text-white">Eunice Daniel</a>
         <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a
@@ -87,7 +87,7 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <span className="eyebrow text-white hidden md:block">Tagline 1</span>
+        <span className="eyebrow text-white hidden md:block">Designer</span>
       </div>
     </header>
   );
@@ -113,8 +113,8 @@ function Hero() {
           className="font-display text-foreground reveal"
           style={{ fontSize: "clamp(5rem, 22vw, 19rem)" }}
         >
-          <span className="block">NAME 1</span>
-          <span className="block text-right md:-mt-[0.15em]">NAME 2</span>
+          <span className="block">EUNICE</span>
+          <span className="block text-right md:-mt-[0.15em]">DANIEL</span>
         </h1>
 
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42vw] max-w-[440px] aspect-[3/4] bg-muted flex items-center justify-center">
@@ -125,10 +125,10 @@ function Hero() {
       {/* Intro paragraph */}
       <div className="grid grid-cols-12 gap-4 px-6 md:px-10 mt-16 md:mt-24 pb-16">
         <div className="col-span-12 md:col-start-2 md:col-span-4 eyebrow text-muted-foreground">
-          Section 1
+          Introduction
         </div>
         <p className="col-span-12 md:col-span-6 text-lg md:text-2xl font-sans-tight font-light leading-snug text-foreground max-w-xl">
-          Description 1. Body copy placeholder describing the practice in one or two sentences.
+          A contemporary designer working across jewellery and objects, exploring material, memory and cultural practice through quiet, considered form.
         </p>
       </div>
     </section>
@@ -213,42 +213,32 @@ function About() {
     <section id="about" className="px-6 md:px-10 py-24 md:py-40 border-t border-border">
       <div className="grid grid-cols-12 gap-4 mb-16">
         <div className="col-span-12 md:col-span-3 eyebrow text-muted-foreground">
-          Section 3
+          About
         </div>
       </div>
 
       <div className="relative grid grid-cols-12 gap-4 items-center">
-        <h2
-          className="col-span-12 font-display text-foreground relative z-10"
-          style={{ fontSize: "clamp(5rem, 24vw, 22rem)" }}
-        >
-          HEADING 1
-        </h2>
-
-        <div className="absolute right-0 md:right-10 top-1/2 -translate-y-1/2 w-[55vw] md:w-[28vw] max-w-[420px] aspect-[3/4] z-0 bg-muted flex items-center justify-center">
-          <span className="eyebrow text-muted-foreground">Image 2</span>
-        </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-4 mt-20 md:mt-32">
+      <div className="grid grid-cols-12 gap-4 mt-4">
         <div className="hidden md:block md:col-span-3 eyebrow text-muted-foreground">
-          Label 1
+          Biography
         </div>
         <p className="col-span-12 md:col-span-6 text-xl md:text-3xl font-light leading-snug font-sans-tight max-w-2xl">
-          Bio 1. Placeholder paragraph describing background, focus areas, and approach in a few sentences.
+          Trained between Chennai and London, Eunice Daniel's practice sits at the intersection of contemporary jewellery, material research, and cultural narrative — translating tradition into objects that travel.
         </p>
         <div className="col-span-12 md:col-span-3 mt-8 md:mt-0 space-y-6">
           <div>
-            <p className="eyebrow text-muted-foreground">Label 2</p>
-            <p className="font-sans-tight mt-2">Value 1</p>
+            <p className="eyebrow text-muted-foreground">Education</p>
+            <p className="font-sans-tight mt-2">MA Jewellery Design<br/>Central Saint Martins, London</p>
           </div>
           <div>
-            <p className="eyebrow text-muted-foreground">Label 3</p>
-            <p className="font-sans-tight mt-2">Value 2</p>
+            <p className="eyebrow text-muted-foreground">Awards</p>
+            <p className="font-sans-tight mt-2">Two-time Gold Medalist<br/>National Institute of Technology, Chennai</p>
           </div>
           <div>
-            <p className="eyebrow text-muted-foreground">Label 4</p>
-            <p className="font-sans-tight mt-2">Value 3<br/>Value 4</p>
+            <p className="eyebrow text-muted-foreground">Based</p>
+            <p className="font-sans-tight mt-2">London · Chennai</p>
           </div>
         </div>
       </div>
