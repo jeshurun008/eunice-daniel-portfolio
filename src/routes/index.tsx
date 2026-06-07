@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.jpeg.asset.json";
 import intertwineAsset from "@/assets/intertwine.jpeg.asset.json";
+import product2Asset from "@/assets/product2.png.asset.json";
+import product3Asset from "@/assets/product3.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,26 +33,26 @@ const projects = [
   },
   {
     title: "Product 2",
-    category: "Category 2",
-    year: "Year 2",
-    image: null,
-    description: "Description 2. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    category: "Sculptural Adornment",
+    year: "Study 02",
+    image: product2Asset.url,
+    description: "A sculptural neckpiece study exploring volume, fragility and shadow — paper-thin petals bound to a corded armature, suspended between garment and gesture.",
     details: [
-      ["Label 1", "Value 1"],
-      ["Label 2", "Value 2"],
-      ["Label 3", "Value 3"],
+      ["Medium", "Hand-formed paper"],
+      ["Technique", "Bound · Cord-wrapped"],
+      ["Form", "Neckpiece"],
     ],
   },
   {
     title: "Product 3",
-    category: "Category 3",
-    year: "Year 3",
-    image: null,
-    description: "Description 3. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    category: "Hair Ornament",
+    year: "Study 03",
+    image: product3Asset.url,
+    description: "A hair ornament study weaving leather petals and brass detail through a braided form — a quiet object held between tradition and contemporary line.",
     details: [
-      ["Label 1", "Value 1"],
-      ["Label 2", "Value 2"],
-      ["Label 3", "Value 3"],
+      ["Medium", "Leather · Brass"],
+      ["Technique", "Braided · Wrapped"],
+      ["Form", "Hair piece"],
     ],
   },
 ];
@@ -107,18 +109,25 @@ function Hero() {
         </div>
       </div>
 
-      {/* Oversized name + portrait */}
-      <div className="relative px-6 md:px-10">
-        <h1
-          className="font-display text-foreground reveal"
-          style={{ fontSize: "clamp(5rem, 22vw, 19rem)" }}
-        >
-          <span className="block">EUNICE</span>
-          <span className="block text-right md:-mt-[0.15em]">DANIEL</span>
-        </h1>
-
-        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42vw] max-w-[440px] aspect-[3/4] bg-muted flex items-center justify-center">
-          <img src={portraitAsset.url} alt="Portrait" className="w-full h-full object-cover" />
+      {/* Name + portrait side-by-side */}
+      <div className="grid grid-cols-12 gap-6 md:gap-10 items-end px-6 md:px-10">
+        <div className="col-span-12 md:col-span-8 reveal">
+          <h1
+            className="font-display text-foreground"
+            style={{ fontSize: "clamp(3.5rem, 14vw, 13rem)" }}
+          >
+            <span className="block">Eunice</span>
+            <span className="block md:-mt-[0.12em] md:pl-[0.4em] italic">Daniel</span>
+          </h1>
+        </div>
+        <div className="col-span-12 md:col-span-4">
+          <div className="w-full aspect-[3/4] bg-muted overflow-hidden">
+            <img
+              src={portraitAsset.url}
+              alt="Eunice Daniel"
+              className="w-full h-full object-cover grayscale"
+            />
+          </div>
         </div>
       </div>
 
@@ -169,7 +178,7 @@ function Work() {
           <article key={p.title} className="grid grid-cols-12 gap-6 md:gap-10 items-start">
             <div className="col-span-12 md:col-span-7 relative overflow-hidden aspect-[3/4] bg-muted flex items-center justify-center">
               {p.image ? (
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover grayscale" />
               ) : (
                 <span className="eyebrow text-muted-foreground">Image {idx + 1}</span>
               )}
