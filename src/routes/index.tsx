@@ -57,7 +57,7 @@ const projects = [
   },
 ];
 
-const navItems = ["Nav 1", "Nav 2", "Nav 3", "Nav 4", "Nav 5"];
+const navItems = ["Work", "About", "Process", "Press", "Contact"];
 
 function Index() {
   return (
@@ -145,8 +145,14 @@ function Hero() {
 }
 
 function Marquee() {
-  const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
-  const row = [...items, ...items, ...items, ...items];
+  const items = [
+    "Contemporary Jewellery",
+    "Material Research",
+    "Cultural Narrative",
+    "Object & Form",
+    "Slow Craft",
+  ];
+  const row = [...items, ...items, ...items];
   return (
     <div className="bg-foreground text-background py-6 overflow-hidden border-y border-foreground">
       <div className="marquee-track flex whitespace-nowrap gap-12 font-display text-5xl md:text-7xl">
@@ -178,7 +184,7 @@ function Work() {
           <article key={p.title} className="grid grid-cols-12 gap-6 md:gap-10 items-start">
             <div className="col-span-12 md:col-span-7 relative overflow-hidden aspect-[3/4] bg-muted flex items-center justify-center">
               {p.image ? (
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover grayscale" />
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
               ) : (
                 <span className="eyebrow text-muted-foreground">Image {idx + 1}</span>
               )}
