@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.jpeg.asset.json";
 import intertwineAsset from "@/assets/intertwine.jpeg.asset.json";
+import product2Asset from "@/assets/product2.png.asset.json";
+import product3Asset from "@/assets/product3.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,26 +33,26 @@ const projects = [
   },
   {
     title: "Product 2",
-    category: "Category 2",
-    year: "Year 2",
-    image: null,
-    description: "Description 2. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    category: "Sculptural Adornment",
+    year: "Study 02",
+    image: product2Asset.url,
+    description: "A sculptural neckpiece study exploring volume, fragility and shadow — paper-thin petals bound to a corded armature, suspended between garment and gesture.",
     details: [
-      ["Label 1", "Value 1"],
-      ["Label 2", "Value 2"],
-      ["Label 3", "Value 3"],
+      ["Medium", "Hand-formed paper"],
+      ["Technique", "Bound · Cord-wrapped"],
+      ["Form", "Neckpiece"],
     ],
   },
   {
     title: "Product 3",
-    category: "Category 3",
-    year: "Year 3",
-    image: null,
-    description: "Description 3. Placeholder body copy describing the project, its concept and material approach in a few measured sentences.",
+    category: "Hair Ornament",
+    year: "Study 03",
+    image: product3Asset.url,
+    description: "A hair ornament study weaving leather petals and brass detail through a braided form — a quiet object held between tradition and contemporary line.",
     details: [
-      ["Label 1", "Value 1"],
-      ["Label 2", "Value 2"],
-      ["Label 3", "Value 3"],
+      ["Medium", "Leather · Brass"],
+      ["Technique", "Braided · Wrapped"],
+      ["Form", "Hair piece"],
     ],
   },
 ];
