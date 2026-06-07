@@ -109,18 +109,25 @@ function Hero() {
         </div>
       </div>
 
-      {/* Oversized name + portrait */}
-      <div className="relative px-6 md:px-10">
-        <h1
-          className="font-display text-foreground reveal"
-          style={{ fontSize: "clamp(5rem, 22vw, 19rem)" }}
-        >
-          <span className="block">EUNICE</span>
-          <span className="block text-right md:-mt-[0.15em]">DANIEL</span>
-        </h1>
-
-        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[42vw] max-w-[440px] aspect-[3/4] bg-muted flex items-center justify-center">
-          <img src={portraitAsset.url} alt="Portrait" className="w-full h-full object-cover" />
+      {/* Name + portrait side-by-side */}
+      <div className="grid grid-cols-12 gap-6 md:gap-10 items-end px-6 md:px-10">
+        <div className="col-span-12 md:col-span-8 reveal">
+          <h1
+            className="font-display text-foreground"
+            style={{ fontSize: "clamp(3.5rem, 14vw, 13rem)" }}
+          >
+            <span className="block">Eunice</span>
+            <span className="block md:-mt-[0.12em] md:pl-[0.4em] italic">Daniel</span>
+          </h1>
+        </div>
+        <div className="col-span-12 md:col-span-4">
+          <div className="w-full aspect-[3/4] bg-muted overflow-hidden">
+            <img
+              src={portraitAsset.url}
+              alt="Eunice Daniel"
+              className="w-full h-full object-cover grayscale"
+            />
+          </div>
         </div>
       </div>
 
