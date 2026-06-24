@@ -32,32 +32,32 @@ const projects = [
     ],
   },
   {
-    title: "Product 2",
+    title: "OODI Belt",
     category: "Sculptural Adornment",
-    year: "Study 02",
+    year: "Collection 02",
     image: product2Asset.url,
-    description: "A sculptural neckpiece study exploring volume, fragility and shadow — paper-thin petals bound to a corded armature, suspended between garment and gesture.",
+    description: "OODI belt explores the traditional technique of flower garland stringing by transforming the process into a wearable structure. Rather than concealing the method of assembly, the design emphasizes it through exaggerated, elongated stems that expose the act of threading. A leather cord weaves through and secures each floral element, making the stringing technique both the structural foundation and visual focus of the piece.",
     details: [
-      ["Medium", "Hand-formed paper"],
-      ["Technique", "Bound · Cord-wrapped"],
-      ["Form", "Neckpiece"],
+      ["Medium", "Post-consumer leather"],
+      ["Technique", "Threaded · Cord-strung"],
+      ["Form", "Belt"],
     ],
   },
   {
-    title: "Product 3",
+    title: "SAVURI Headpiece",
     category: "Hair Ornament",
-    year: "Study 03",
+    year: "Collection 03",
     image: product3Asset.url,
-    description: "A hair ornament study weaving leather petals and brass detail through a braided form — a quiet object held between tradition and contemporary line.",
+    description: "SAVURI headpiece draws inspiration from the longstanding tradition of wearing flowers in the hair. Reimagined in leather, the floral elements are threaded sequentially, preserving the visual language of floral adornment while translating it into a lasting object. The piece celebrates cultural practices of decorating the hair with flowers, transforming a temporary ritual into a sculptural accessory.",
     details: [
-      ["Medium", "Leather · Brass"],
-      ["Technique", "Braided · Wrapped"],
-      ["Form", "Hair piece"],
+      ["Medium", "Post-consumer leather"],
+      ["Technique", "Threaded · Sequenced"],
+      ["Form", "Headpiece"],
     ],
   },
 ];
 
-const navItems = ["Work", "About", "Process", "Press", "Contact"];
+const navItems = ["Work", "About", "Contact"];
 
 function Index() {
   return (
@@ -74,10 +74,15 @@ function Index() {
 }
 
 function Nav() {
+  const navItems = ["Work", "About", "Contact"];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
       <div className="flex items-center justify-between px-6 md:px-10 py-6">
-        <a href="#top" className="eyebrow text-white">Eunice Daniel</a>
+        <a href="#top" className="eyebrow text-white">
+          Eunice Daniel
+        </a>
+
         <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a
@@ -89,7 +94,10 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <span className="eyebrow text-white hidden md:block">Designer</span>
+
+        <span className="eyebrow text-white hidden md:block">
+          Designer
+        </span>
       </div>
     </header>
   );
