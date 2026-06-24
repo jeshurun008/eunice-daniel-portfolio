@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import portraitAsset from "@/assets/portrait.jpeg.asset.json";
-import intertwineAsset from "@/assets/intertwine.jpeg.asset.json";
-import product2Asset from "@/assets/product2.png.asset.json";
-import product3Asset from "@/assets/product3.png.asset.json";
-
+import portraitImage from "@/assets/eunice.jpeg";
+import intertwineImage from "@/assets/interwine.jpeg";
+import oodiBeltImage from "@/assets/oodibelt.jpeg";
+import hairpieceImage from "@/assets/hairpiece.jpeg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -16,15 +15,14 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
 const projects = [
   {
     title: "Intertwஐne",
     category: "Contemporary Jewellery",
     year: "Collection 01",
-    image: intertwineAsset.url,
+    image: intertwineImage,
     description:
-      "Intertwஐne explores the intertwining of cultural practices through the lens of contemporary jewellery design. Inspired by \u201CPoo Korthal\u201D (traditional flower stringing), a practice deeply rooted in Tamil culture, often used for adornment, the collection draws on the simplicity and versatility of this floral tradition, bringing durability to the narratives of this elegant, temporary form of adornment. The pieces reinterpret the forms and structures of flower garlands through enlarged and exaggerated elements inspired by petals and stems. Amplifying delicate and tiny forms explores the possibilities beyond the limitations of real flowers. Each petal is individually moulded and dyed using traditional leather techniques. Celebrating a sustainable use of resources and crafted from post-consumer leather remnants, the jewellery invites audiences to reconsider the value of pre-consumer material surplus and the inherent possibilities. Designed for the Indian diaspora, the collection reflects the experience of carrying fragments of culture across borders, embodying identity, memory and connection.",
+      "Intertwஐne explores the intertwining of cultural practices through the lens of contemporary jewellery design. Inspired by “Poo Korthal” (traditional flower stringing), a practice deeply rooted in Tamil culture, often used for adornment, the collection draws on the simplicity and versatility of this floral tradition, bringing durability to the narratives of this elegant, temporary form of adornment. The pieces reinterpret the forms and structures of flower garlands through enlarged and exaggerated elements inspired by petals and stems. Amplifying delicate and tiny forms explores the possibilities beyond the limitations of real flowers. Each petal is individually moulded and dyed using traditional leather techniques. Celebrating a sustainable use of resources and crafted from post-consumer leather remnants, the jewellery invites audiences to reconsider the value of pre-consumer material surplus and the inherent possibilities. Designed for the Indian diaspora, the collection reflects the experience of carrying fragments of culture across borders, embodying identity, memory and connection.",
     details: [
       ["Medium", "Post-consumer leather"],
       ["Technique", "Moulded · Hand-dyed"],
@@ -35,8 +33,9 @@ const projects = [
     title: "OODI Belt",
     category: "Sculptural Adornment",
     year: "Collection 02",
-    image: product2Asset.url,
-    description: "OODI belt explores the traditional technique of flower garland stringing by transforming the process into a wearable structure. Rather than concealing the method of assembly, the design emphasizes it through exaggerated, elongated stems that expose the act of threading. A leather cord weaves through and secures each floral element, making the stringing technique both the structural foundation and visual focus of the piece.",
+    image: oodiBeltImage,
+    description:
+      "OODI belt explores the traditional technique of flower garland stringing by transforming the process into a wearable structure. Rather than concealing the method of assembly, the design emphasizes it through exaggerated, elongated stems that expose the act of threading. A leather cord weaves through and secures each floral element, making the stringing technique both the structural foundation and visual focus of the piece.",
     details: [
       ["Medium", "Post-consumer leather"],
       ["Technique", "Threaded · Cord-strung"],
@@ -47,8 +46,9 @@ const projects = [
     title: "SAVURI Headpiece",
     category: "Hair Ornament",
     year: "Collection 03",
-    image: product3Asset.url,
-    description: "SAVURI headpiece draws inspiration from the longstanding tradition of wearing flowers in the hair. Reimagined in leather, the floral elements are threaded sequentially, preserving the visual language of floral adornment while translating it into a lasting object. The piece celebrates cultural practices of decorating the hair with flowers, transforming a temporary ritual into a sculptural accessory.",
+    image: hairpieceImage,
+    description:
+      "SAVURI headpiece draws inspiration from the longstanding tradition of wearing flowers in the hair. Reimagined in leather, the floral elements are threaded sequentially, preserving the visual language of floral adornment while translating it into a lasting object. The piece celebrates cultural practices of decorating the hair with flowers, transforming a temporary ritual into a sculptural accessory.",
     details: [
       ["Medium", "Post-consumer leather"],
       ["Technique", "Threaded · Sequenced"],
@@ -56,7 +56,6 @@ const projects = [
     ],
   },
 ];
-
 const navItems = ["Work", "About", "Contact"];
 
 function Index() {
@@ -64,7 +63,6 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
       <Hero />
-      <Marquee />
       <Work />
       <About />
       <Contact />
@@ -108,13 +106,9 @@ function Hero() {
     <section id="top" className="relative min-h-screen overflow-hidden pt-28 md:pt-32">
       {/* Top meta row */}
       <div className="grid grid-cols-12 gap-4 px-6 md:px-10 mb-8 md:mb-16">
-        <div className="col-span-6 md:col-span-3 eyebrow text-muted-foreground">
-          Label 1<br />Label 2
-        </div>
+
         <div className="hidden md:block md:col-span-6" />
-        <div className="col-span-6 md:col-span-3 eyebrow text-muted-foreground text-right">
-          Label 3<br />Label 4
-        </div>
+
       </div>
 
       {/* Name + portrait side-by-side */}
@@ -128,15 +122,15 @@ function Hero() {
             <span className="block md:-mt-[0.12em] md:pl-[0.4em] italic">Daniel</span>
           </h1>
         </div>
-        <div className="col-span-12 md:col-span-4">
-          <div className="w-full aspect-[3/4] bg-muted overflow-hidden">
-            <img
-              src={portraitAsset.url}
-              alt="Eunice Daniel"
-              className="w-full h-full object-cover grayscale"
-            />
-          </div>
-        </div>
+<div className="col-span-12 md:col-span-4 flex justify-end">
+  <div className="w-full max-w-lg aspect-[3/4] overflow-hidden">
+    <img
+      src={portraitImage}
+      alt="Eunice Daniel"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
       </div>
 
       {/* Intro paragraph */}
@@ -251,10 +245,26 @@ function About() {
           Trained between Chennai and London, Eunice Daniel's practice sits at the intersection of contemporary jewellery, material research, and cultural narrative — translating tradition into objects that travel.
         </p>
         <div className="col-span-12 md:col-span-3 mt-8 md:mt-0 space-y-6">
-          <div>
-            <p className="eyebrow text-muted-foreground">Education</p>
-            <p className="font-sans-tight mt-2">MA Jewellery Design<br/>Central Saint Martins, London</p>
-          </div>
+<div>
+  <p className="eyebrow text-muted-foreground">Education</p>
+
+  <div className="mt-2 space-y-4 font-sans-tight">
+    <div>
+      <p className="text-sm text-muted-foreground">College</p>
+      <p>Central Saint Martins</p>
+    </div>
+
+    <div>
+      <p className="text-sm text-muted-foreground">Course</p>
+      <p>MA Design: Ceramics, Furniture, Jewellery</p>
+    </div>
+
+    <div>
+      <p className="text-sm text-muted-foreground">Graduation Year</p>
+      <p>2026</p>
+    </div>
+  </div>
+</div>
           <div>
             <p className="eyebrow text-muted-foreground">Awards</p>
             <p className="font-sans-tight mt-2">Two-time Gold Medalist<br/>National Institute of Technology, Chennai</p>
@@ -316,10 +326,13 @@ function Services() {
 
 function Contact() {
   return (
-    <section id="contact" className="bg-foreground text-background px-6 md:px-10 py-24 md:py-40">
+    <section
+      id="contact"
+      className="bg-foreground text-background px-6 md:px-10 py-24 md:py-40"
+    >
       <div className="grid grid-cols-12 gap-4 mb-16">
         <div className="col-span-12 md:col-span-3 eyebrow text-background/60">
-          Section 5
+          Contact
         </div>
       </div>
 
@@ -327,27 +340,51 @@ function Contact() {
         className="font-display"
         style={{ fontSize: "clamp(3rem, 11vw, 12rem)" }}
       >
-        Heading 3
+        Contact
       </h2>
 
-      <div className="grid grid-cols-12 gap-4 mt-20 md:mt-32">
-        <p className="col-span-12 md:col-start-7 md:col-span-6 text-xl md:text-2xl font-sans-tight font-light leading-snug text-background/80">
-          Description 2. Placeholder body copy for the contact section.
-        </p>
-      </div>
+   <div className="mt-12 max-w-2xl">
+  <p className="text-xl md:text-2xl font-sans-tight font-light leading-snug text-background/80">
+    For commissions, collaborations, exhibitions and enquiries, please get in touch.
+  </p>
+</div>
 
-      <div className="grid grid-cols-12 gap-4 mt-20 md:mt-32 border-t border-background/20 pt-12">
-        <div className="col-span-12 md:col-span-4">
-          <p className="eyebrow text-background/60">Label 1</p>
-          <p className="mt-3 block font-display text-3xl md:text-4xl">Value 1</p>
+      <div className="mt-20 space-y-8">
+        <div>
+          <p className="eyebrow text-background/60">Email</p>
+          <a
+            href="mailto:eunicepearline@gmail.com"
+            className="mt-2 block font-display text-3xl md:text-5xl hover:opacity-70 transition-opacity"
+          >
+            eunicepearline@gmail.com
+          </a>
         </div>
-        <div className="col-span-6 md:col-span-4 mt-10 md:mt-0">
-          <p className="eyebrow text-background/60">Label 2</p>
-          <p className="mt-3 block font-display text-3xl md:text-4xl">Value 2</p>
+
+        <div className="flex items-center gap-8">
+          <a
+            href="https://www.instagram.com/perez_objects"
+            target="_blank"
+            rel="noreferrer"
+            className="text-background/80 hover:text-background transition-colors"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/eunice-daniel"
+            target="_blank"
+            rel="noreferrer"
+            className="text-background/80 hover:text-background transition-colors"
+          >
+            LinkedIn
+          </a>
         </div>
-        <div className="col-span-6 md:col-span-4 mt-10 md:mt-0">
-          <p className="eyebrow text-background/60">Label 3</p>
-          <p className="mt-3 font-display text-3xl md:text-4xl">Value 3</p>
+
+        <div>
+          <p className="eyebrow text-background/60">Location</p>
+          <p className="mt-2 text-xl font-sans-tight text-background/80">
+            London · Chennai
+          </p>
         </div>
       </div>
     </section>
